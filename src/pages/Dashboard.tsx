@@ -1,3 +1,4 @@
+import AirQualityCard from "../components/charts/AirQualityCard";
 import Co2Chart from "../components/charts/Co2Chart";
 import EnergyChart from "../components/charts/EnergyChart";
 import WaterChart from "../components/charts/WaterChart";
@@ -58,6 +59,9 @@ const Dashboard = () => {
 
       <Card title="Water Consumption">
         <WaterChart data={filteredData} />
+      </Card>
+      <Card title="Air Quality (24h Live)">
+        <AirQualityCard />
       </Card>
     </div>
   );
