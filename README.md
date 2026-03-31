@@ -1,4 +1,4 @@
-# 🌱 GreenCity Dashboard
+# 🌱 EnviroChart Dashboard
 
 A modern environmental dashboard for visualizing air quality and sustainability metrics.
 
