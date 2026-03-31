@@ -1,4 +1,4 @@
-const getCoords = (city: string) => {
+export const getCoords = (city: string) => {
   switch (city) {
     case "Berlin":
       return { lat: 52.52, lon: 13.41 };

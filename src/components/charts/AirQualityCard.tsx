@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { fetchAirQuality } from "../../services/api";
 import AirQualityChart from "./AirQualityChart";
+import CityMap from "../map/CityMap";
+import { getCoords } from "../../services/api";
 
 const AirQualityCard = () => {
   const [city, setCity] = useState("Berlin");
   const [chartData, setChartData] = useState<any[]>([]);
+  const { lat, lon } = getCoords(city);
 
   useEffect(() => {
     fetchAirQuality(city).then((response) => {
@@ -20,7 +23,7 @@ const AirQualityCard = () => {
   }, [city]);
 
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       <div className="mb-3">
         <select
           value={city}
@@ -34,6 +37,7 @@ const AirQualityCard = () => {
       </div>
 
       <AirQualityChart data={chartData} />
+      <CityMap lat={lat} lon={lon} city={city} />
     </div>
   );
 };
